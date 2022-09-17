@@ -1,0 +1,17 @@
+/*this is a first code for c#
+ */
+
+using System;
+
+namespace HelloWorld //first code for c#
+{
+    class Program
+    {
+        static void Main(string[]args)
+        {
+            Console.WriteLine("Hello");
+            Console.WriteLine("Sulav");
+            Console.WriteLine("Raut");
+        }
+    }
+}
