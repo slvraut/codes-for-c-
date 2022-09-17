@@ -19,3 +19,23 @@ string name = "Sulav";
 int mynum = 15;
 mynum = 10;
 Console.Write(mynum);
+
+//using +character to add a variable to another
+
+//string firstname = "Sulav";
+//string lastname = "Raut";
+//string fullname = firstname + lastname; 
+//Console.WriteLine(fullname);
+
+//for adding integers
+
+//int x = 6;
+//int y = 7;
+//Console.WriteLine(x + y);
+
+//declare many variables
+//int x=5, y=6, z=7;
+//Console.WriteLine(x+y+z);   
+
+
+
