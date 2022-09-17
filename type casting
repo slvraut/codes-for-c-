@@ -1,0 +1,30 @@
+//implicit type casting (converting smaller size to a large size)
+
+//int myInt = 9;
+//double myDouble=myInt;
+//Console.WriteLine(myInt);
+//Console.WriteLine(myDouble);
+
+//int myInt = 5;
+//long myLong = myInt;    
+//Console.WriteLine(myInt);
+//Console.WriteLine(myLong);
+
+//Explicit type casting ( converting larger size to a small size)
+
+//double myDouble = 9.78;
+//int myInt = (int)myDouble;
+
+//Console.WriteLine(myInt); //outputs 9.78
+//Console.WriteLine(myDouble); // outputs 9
+
+//type conversion
+//int myInt = 9;
+//double myDouble = 5.75;
+//bool myBool = true;
+
+//Console.WriteLine(Convert.ToString(myInt)); // convert  int to string
+//Console.WriteLine(Convert.ToDouble(myInt)); // convert int to double
+//Console.WriteLine(Convert.ToInt32(myDouble)); // convert double to int
+//Console.WriteLine(Convert.ToString(myBool));   // convert bool into string
+
