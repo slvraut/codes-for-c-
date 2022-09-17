@@ -1,0 +1,21 @@
+//creating a variable string
+
+using System;
+
+string name = "Sulav";
+    Console.WriteLine(name);
+
+// creating a variable int
+
+//int myNum = 15;
+//Console.WriteLine(myNum);
+
+//you can also assign a value later
+//int myNum;
+//myNum = 5;
+//Console.Write(myNum);
+
+//changing an existing value
+int mynum = 15;
+mynum = 10;
+Console.Write(mynum);
