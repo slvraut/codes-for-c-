@@ -1,0 +1,16 @@
+finds highest value
+Math.Max(5,10);
+
+finds lowest value
+Math.Min(5,10);
+
+finds square of number
+Math.Sqrt(64);
+
+returns positive
+Math.Abs(x)
+Math.Abs(-8,9);
+
+returns nearest whole number
+
+Maths.Round(9.99);
