@@ -1,0 +1,15 @@
+//user input
+
+//Console.WriteLine("Enter username");
+//string Username = Console.ReadLine();
+//Console.WriteLine("Username is:" + Username);
+
+//It can be done like this using type casting
+
+
+
+
+Console.WriteLine("Enter your age:");
+int age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Your age is: " + age);
+
