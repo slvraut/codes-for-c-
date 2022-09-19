@@ -1,0 +1,129 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace StudentCourse
+{
+    class StudentCourse
+    {
+        static void Main(String[] args)
+        {
+            Course course = new Course();
+            course = course.getCourseDetails();
+            course.printCourseDetails(course);
+
+
+        }
+
+    }
+    class Course
+    {
+        string course_name = "BSc. CSSE";
+        string course_details = "3 years bachelors degree in Software Engineering.";
+        int duration_year = 3;
+        int no_of_semesters = 6;
+        int total_credit_score;
+        Subjects[] subjects = new Subjects[6];
+        public void printCourseDetails(Course course)
+        {
+            Console.WriteLine("Course Name : " + course_name);
+            Console.WriteLine("Course Details : " + course_details);
+            Console.WriteLine("Course Duration: " + duration_year);
+            Console.WriteLine("Number of Semesters : " + no_of_semesters);
+            Console.WriteLine("Total Credit Score : " + total_credit_score);
+            Console.WriteLine("Course Subjects : ");
+            Console.WriteLine();
+            for (int i = 0; i < course.subjects.Length; i++)
+            {
+                Console.WriteLine("Subject Name : " + course.subjects[i].subject_name);
+                Console.WriteLine("Subject Code : " + course.subjects[i].subject_code);
+                Console.WriteLine("Subject Code : " + course.subjects[i].credit_score);
+                Console.WriteLine("Subject Code : " + course.subjects[i].semester_number);
+                Console.WriteLine();
+
+            }
+
+        }
+        public Course getCourseDetails()
+        {
+            Course course = new Course();
+            int total_credit_score = 0;
+            for (int i = 0; i < 6; i++)
+
+            {
+                Subjects sub = new Subjects();
+                Console.Write("Subject Name : ");
+                sub.subject_name = Console.ReadLine();
+                Console.Write("Subject Code : ");
+                sub.subject_code = Console.ReadLine();
+                Console.Write("Credit Score : ");
+                sub.credit_score = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Semester Number : ");
+                sub.semester_number = Convert.ToInt32(Console.ReadLine());
+                subjects[i] = sub;
+                total_credit_score = total_credit_score + sub.credit_score;
+                Semester sem = new Semester();
+                Console.Write("Semester Details : ");
+                sem.sem_details = Console.ReadLine();
+                Console.WriteLine();
+
+
+
+            }
+            course.subjects = subjects;
+            course.total_credit_score = total_credit_score;
+            return course;
+        }
+
+    }
+    class Subjects
+    {
+        public string subject_name;
+        public string subject_code;
+        public int credit_score;
+        public int semester_number;
+
+    }
+    class Semester
+    {
+        public string sem_details;
+        int semester_number;
+
+    }
+    class Student
+    {
+        string firstName;
+        string middleName;
+        string lastName;
+        string gender;
+        int age;
+        string roll_no;
+        string email;
+        string university_id;
+        string phone_number;
+        Address[] address_details = new Address[2];
+        Course student_affilited_course = new Course();
+
+        public void printStudentDetails()
+        {
+
+        }
+        public Student getStudentDetails()
+        {
+            Student std = new Student();
+            return std;
+
+        }
+
+
+
+    }
+    class Address
+    {
+        string tole;
+        string mnc;
+        string district;
+        string city;
+        string pradesh;
+    }
+
+}
