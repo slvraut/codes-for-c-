@@ -1,0 +1,10 @@
+//int sum1= 50 + 20;
+//int sum2 = sum1 + 200;
+//int sum3 = sum2 + sum2;
+
+int x = 300 + 50;
+
+//assignment operator
+
+int x = 10;
+
