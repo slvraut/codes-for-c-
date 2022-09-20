@@ -7,8 +7,13 @@ namespace StudentCourse
     {
         static void Main(String[] args)
         {
+            Student student = new Student();
+            student = student.getStudentDetails();
+
             Course course = new Course();
             course = course.getCourseDetails();
+
+            student.printStudentDetails(student);
             course.printCourseDetails(course);
 
 
@@ -23,6 +28,7 @@ namespace StudentCourse
         int no_of_semesters = 6;
         int total_credit_score;
         Subjects[] subjects = new Subjects[6];
+        Semester[] semesters = new Semester[6];
         public void printCourseDetails(Course course)
         {
             Console.WriteLine("Course Name : " + course_name);
@@ -36,19 +42,23 @@ namespace StudentCourse
             {
                 Console.WriteLine("Subject Name : " + course.subjects[i].subject_name);
                 Console.WriteLine("Subject Code : " + course.subjects[i].subject_code);
-                Console.WriteLine("Subject Code : " + course.subjects[i].credit_score);
-                Console.WriteLine("Subject Code : " + course.subjects[i].semester_number);
+                Console.WriteLine("Subject Score : " + course.subjects[i].credit_score);
+                Console.WriteLine();
+                Console.WriteLine("Semester Number : " + course.semesters[i].semester_number);
+                Console.WriteLine("Semester Details : " + course.semesters[i].sem_details);
                 Console.WriteLine();
 
             }
+
+
 
         }
         public Course getCourseDetails()
         {
             Course course = new Course();
+
             int total_credit_score = 0;
             for (int i = 0; i < 6; i++)
-
             {
                 Subjects sub = new Subjects();
                 Console.Write("Subject Name : ");
@@ -57,13 +67,18 @@ namespace StudentCourse
                 sub.subject_code = Console.ReadLine();
                 Console.Write("Credit Score : ");
                 sub.credit_score = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Semester Number : ");
-                sub.semester_number = Convert.ToInt32(Console.ReadLine());
-                subjects[i] = sub;
-                total_credit_score = total_credit_score + sub.credit_score;
+
                 Semester sem = new Semester();
+
+                Console.Write("Semester Number : ");
+                sem.semester_number = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Semester Details : ");
                 sem.sem_details = Console.ReadLine();
+
+                subjects[i] = sub;
+                semesters[i] = sem;
+                total_credit_score = total_credit_score + sub.credit_score;
+
                 Console.WriteLine();
 
 
@@ -71,6 +86,7 @@ namespace StudentCourse
             }
             course.subjects = subjects;
             course.total_credit_score = total_credit_score;
+            course.semesters = semesters;
             return course;
         }
 
@@ -80,13 +96,13 @@ namespace StudentCourse
         public string subject_name;
         public string subject_code;
         public int credit_score;
-        public int semester_number;
+
 
     }
     class Semester
     {
         public string sem_details;
-        int semester_number;
+        public int semester_number;
 
     }
     class Student
@@ -101,15 +117,82 @@ namespace StudentCourse
         string university_id;
         string phone_number;
         Address[] address_details = new Address[2];
-        Course student_affilited_course = new Course();
+        // Course student_affilited_course = new Course();
 
-        public void printStudentDetails()
+        public void printStudentDetails(Student student)
         {
+            Console.WriteLine("First Name : " + student.firstName);
+            Console.WriteLine("Middle Name : " + student.middleName);
+            Console.WriteLine("Last Name : " + student.lastName);
+            Console.WriteLine("Gender : " + student.gender);
+            Console.WriteLine("Age : " + student.age);
+            Console.WriteLine("Roll No : " + student.roll_no);
+            Console.WriteLine("Email : " + student.email);
+            Console.WriteLine("University ID : " + student.university_id);
+            Console.WriteLine("Phone Number : " + student.phone_number);
+            Console.WriteLine();
+            Console.WriteLine("Address : ");
+            Console.WriteLine();
 
+            for (int i = 0; i < student.address_details.Length; i++)
+            {
+                Console.WriteLine("Province Name : " + student.address_details[i].pradesh);
+                Console.WriteLine("District : " + student.address_details[i].district);
+                Console.WriteLine("City : " + student.address_details[i].city);
+                Console.WriteLine("Muicipality Name : " + student.address_details[i].mnc);
+                Console.WriteLine("Tole : " + student.address_details[i].tole);
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
         }
         public Student getStudentDetails()
         {
+
             Student std = new Student();
+
+            Address address = new Address();
+            // Subjects sub = new Subjects();
+            Console.Write("First Name : ");
+            std.firstName = Console.ReadLine();
+            Console.Write("Middle Name : ");
+            std.middleName = Console.ReadLine();
+            Console.Write("Last Name : ");
+            std.lastName = Console.ReadLine();
+            Console.Write("Gender : ");
+            std.gender = Console.ReadLine();
+            Console.Write("Age : ");
+            std.age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Roll Number : ");
+            std.roll_no = Console.ReadLine();
+            Console.Write("Email : ");
+            std.email = Console.ReadLine();
+            Console.Write("University ID : ");
+            std.university_id = Console.ReadLine();
+            Console.Write("Phone Number : ");
+            std.phone_number = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Address Details : ");
+            Console.WriteLine();
+            Console.WriteLine("Please write Temporary Address first and then Permanent Address");
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write("Province Name : ");
+                address.pradesh = Console.ReadLine();
+                Console.Write("District : ");
+                address.district = Console.ReadLine();
+                Console.Write("City : ");
+                address.city = Console.ReadLine();
+                Console.Write("Municipality Name : ");
+                address.mnc = Console.ReadLine();
+                Console.Write("Tole : ");
+                address.tole = Console.ReadLine();
+                address_details[i] = address;
+                Console.WriteLine();
+
+            }
+
+            std.address_details = address_details;
             return std;
 
         }
@@ -119,11 +202,11 @@ namespace StudentCourse
     }
     class Address
     {
-        string tole;
-        string mnc;
-        string district;
-        string city;
-        string pradesh;
+        public string tole;
+        public string mnc;
+        public string district;
+        public string city;
+        public string pradesh;
     }
 
 }
